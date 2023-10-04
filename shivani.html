@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FizzBuzz</title>
+  </head>
+  <body>
+    <h1>FizzBuzz Results</h1>
+    <ul id="fizzbuzz-list"></ul>
+
+    <script>
+      function isDivisible(num, divisor) {
+        return num % divisor === 0;
+      }
+
+      for (let i = 1; i <= 150; i++) {
+        let result = "";
+
+        if (isDivisible(i, 3)) {
+          result += "Fizz";
+        }
+        if (isDivisible(i, 5)) {
+          result += "Buzz";
+        }
+
+        if (result === "") {
+          result = i;
+        }
+
+        const listItem = document.createElement("li");
+        listItem.textContent = result;
+        document.getElementById("fizzbuzz-list").appendChild(listItem);
+      }
+    </script>
+  </body>
+</html>
